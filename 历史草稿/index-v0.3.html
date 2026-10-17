@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>【署名待确认】· 心理咨询与督导</title>
+<meta name="description" content="学习不是消除你的特点，而是增加你的弹性。">
+<style>
+  :root{
+    --paper:#F7F4EE;
+    --paper-2:#F1ECE3;
+    --ink:#1B1A17;
+    --ink-soft:#4A463F;
+    --muted:#8A8377;
+    --line:rgba(27,26,23,.10);
+    --accent:#2E4A3E;
+    --accent-ink:#F7F4EE;
+    --serif:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.85;
+    letter-spacing:.01em;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:620px;margin:0 auto;padding:0 24px}
+  section{padding:72px 0}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* ---------- 顶部 ---------- */
+  .top{padding:28px 0 0}
+  .top .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .name{font-family:var(--serif);font-size:15px;letter-spacing:.12em}
+  .role{font-size:11px;color:var(--muted);letter-spacing:.16em}
+
+  /* ---------- 首屏 ---------- */
+  .hero{padding:64px 0 76px}
+  .eyebrow{
+    font-size:11px;letter-spacing:.24em;color:var(--muted);
+    margin:0 0 28px;text-transform:uppercase;
+  }
+  h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(27px,7.6vw,40px);
+    line-height:1.55;letter-spacing:.02em;
+    margin:0 0 8px;text-wrap:balance;
+  }
+  .h1-tail{
+    display:block;font-family:var(--serif);
+    font-size:clamp(27px,7.6vw,40px);line-height:1.55;
+    color:var(--accent);margin-top:6px;
+  }
+  .hero p.lede{
+    margin:26px 0 0;color:var(--ink-soft);font-size:15.5px;line-height:1.95;
+    max-width:30em;
+  }
+  .scroll-hint{
+    margin-top:40px;font-size:11px;letter-spacing:.2em;color:var(--muted);
+    display:flex;align-items:center;gap:8px;
+  }
+  .scroll-hint span{display:block;width:32px;height:1px;background:var(--muted)}
+
+  /* ---------- 事实条 ---------- */
+  .facts{background:var(--paper-2);padding:44px 0}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}
+  .stat b{
+    display:block;font-family:var(--serif);font-weight:400;
+    font-size:clamp(21px,5.6vw,26px);line-height:1.3;
+  }
+  .stat i{
+    display:block;font-style:normal;font-size:11px;color:var(--muted);
+    line-height:1.6;margin-top:8px;letter-spacing:.04em;
+  }
+
+  /* ---------- 区块标题 ---------- */
+  .sec-label{
+    font-size:11px;letter-spacing:.22em;color:var(--muted);
+    margin:0 0 22px;
+  }
+  h2{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(21px,5.4vw,26px);line-height:1.6;margin:0 0 26px;
+  }
+
+  /* ---------- 三个动作 ---------- */
+  .acts{list-style:none;margin:0;padding:0}
+  .acts li{
+    display:grid;grid-template-columns:34px 1fr;gap:12px;
+    padding:22px 0;border-top:1px solid var(--line);align-items:start;
+  }
+  .acts li:last-child{border-bottom:1px solid var(--line)}
+  .acts .n{
+    font-family:var(--serif);font-size:12px;color:var(--muted);
+    letter-spacing:.08em;padding-top:5px;
+  }
+  .acts .t{font-size:16.5px;line-height:1.8}
+
+  /* ---------- 写给谁 ---------- */
+  .whom{background:var(--paper-2)}
+  .whom .lines p{
+    font-family:var(--serif);font-size:clamp(18px,4.9vw,22px);
+    line-height:2;margin:0 0 6px;
+  }
+  .whom .after{
+    margin-top:28px;font-size:14.5px;color:var(--ink-soft);line-height:1.95;
+    font-family:var(--sans);
+  }
+
+  /* ---------- 金句屏 ---------- */
+  .quote{padding:0}
+  .quote .inner{
+    min-height:66vh;display:flex;flex-direction:column;
+    justify-content:center;padding:88px 0;
+  }
+  .quote .q{
+    font-family:var(--serif);
+    font-size:clamp(24px,6.6vw,34px);line-height:1.75;
+    margin:0;text-wrap:balance;
+  }
+  .quote .src{
+    margin-top:26px;font-size:11px;letter-spacing:.18em;color:var(--muted);
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{padding:76px 0 96px;text-align:center}
+  .cta h2{margin-bottom:12px}
+  .cta .sub{font-size:14.5px;color:var(--ink-soft);margin:0 0 32px}
+  .btn{
+    display:flex;align-items:center;justify-content:center;
+    width:100%;min-height:56px;padding:0 24px;
+    background:var(--accent);color:var(--accent-ink);
+    text-decoration:none;border-radius:6px;
+    font-size:17px;letter-spacing:.08em;
+    transition:opacity .18s ease;
+  }
+  .btn:active{opacity:.86}
+
+  /* ---------- 照片 ---------- */
+  .portrait{padding:0}
+  .portrait figure{max-width:300px;margin:0 auto}
+  .portrait img{
+    width:100%;aspect-ratio:1/1;object-fit:cover;display:block;
+    border-radius:2px;border:1px solid var(--line);
+    background:var(--paper-2);
+  }
+
+  /* ---------- 微信 ---------- */
+  .wx{
+    display:flex;align-items:center;gap:10px;
+    max-width:352px;margin:24px auto 0;padding:13px 14px 13px 18px;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:6px;
+  }
+  .wx .id{flex:1;text-align:left;font-size:15px;letter-spacing:.04em}
+  .wx .id span{
+    display:block;font-size:10.5px;color:var(--muted);
+    letter-spacing:.16em;margin-bottom:3px;
+  }
+  .wx button{
+    flex:none;min-height:44px;padding:0 18px;
+    background:transparent;color:var(--ink);
+    border:1px solid rgba(27,26,23,.22);border-radius:5px;
+    font-size:14px;font-family:var(--sans);letter-spacing:.06em;
+  }
+  .wx button:active{background:rgba(27,26,23,.05)}
+
+  /* ---------- 提示 ---------- */
+  .toast{
+    position:fixed;left:50%;bottom:96px;z-index:40;
+    transform:translate(-50%,14px);opacity:0;pointer-events:none;
+    background:rgba(27,26,23,.92);color:#fff;
+    font-size:13px;letter-spacing:.06em;padding:10px 18px;border-radius:999px;
+    transition:opacity .2s ease,transform .2s ease;
+  }
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  /* ---------- 页脚 ---------- */
+  footer{padding:0 0 42px;font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+  footer .frow{display:flex;justify-content:space-between;gap:16px;
+    border-top:1px solid var(--line);padding-top:20px}
+
+  /* ---------- 待确认标记 ---------- */
+  .tbd{
+    color:#A8552F;border-bottom:1px dashed rgba(168,85,47,.45);
+    font-size:.92em;
+  }
+
+  /* ---------- 底部浮条 ---------- */
+  .bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    padding:10px 24px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(247,244,238,.94);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-top:1px solid var(--line);
+    transform:translateY(110%);transition:transform .28s ease;
+  }
+  .bar.on{transform:translateY(0)}
+  .bar .btn{min-height:46px;font-size:15.5px;border-radius:5px}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important}
+  }
+  @media (min-width:720px){
+    body{font-size:18px}
+    section{padding:96px 0}
+    .hero{padding:88px 0 104px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="row">
+    <div class="name"><span class="tbd">【署名待确认】</span></div>
+    <div class="role">心理咨询 · 督导 · 培训</div>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">写给正在做这行的你</p>
+  <h1>学习不是消除你的特点，<br>而是增加你的弹性
+    <span class="h1-tail">成为一个真实而完整的人。</span>
+  </h1>
+  <p class="lede">我做心理咨询十多年。现在给咨询师上课，也带一千多名心理老师的专业学习。</p>
+  <div class="scroll-hint"><span></span>往下</div>
+</section>
+
+<hr class="rule">
+
+<section class="facts">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>十多年</b><i>做心理咨询<br>2012 年起</i></div>
+      <div class="stat"><b>一千多位</b><i>心理老师的专业学习</i></div>
+      <div class="stat"><b>4 家</b><i>曾创办的心理诊所<br>3 个城市 · 6 年</i></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="sec-label">上一周</p>
+  <h2>我做的三件事</h2>
+  <ul class="acts">
+    <li><span class="n">01</span><span class="t">给 5 位老师做一对一督导</span></li>
+    <li><span class="n">02</span><span class="t">处理 3 起用户对心理老师的投诉</span></li>
+    <li><span class="n">03</span><span class="t">主持一次 10 人学习小组的月度总结会</span></li>
+  </ul>
+</section>
+
+<section class="whom">
+  <div class="wrap">
+    <p class="sec-label">写给谁</p>
+    <div class="lines">
+      <p>如果你最近和来访的关系变差，<br>被来访攻击，或者被来访抛弃——</p>
+    </div>
+    <p class="after">这页是写给你的。我带的老师，大多从业两三年到五年。</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="portrait wrap">
+  <figure>
+    <img src="portrait.jpg" width="460" height="461" alt="【署名待确认】的照片" loading="lazy" decoding="async">
+  </figure>
+</section>
+
+<section class="quote">
+  <div class="wrap inner">
+    <p class="q">学习不是消除你的特点，<br>而是增加你的弹性。</p>
+    <p class="src">成为真实而完整的人</p>
+  </div>
+</section>
+
+<section class="cta wrap">
+  <h2>想聊，就发我微信</h2>
+  <p class="sub">不用写得很正式。说说你最近卡住的那件事就行。</p>
+  <a class="btn" href="#wechat">加我微信</a>
+  <div class="wx" id="wechat">
+    <div class="id"><span>微信号</span>li18689683</div>
+    <button type="button" id="copy">复制</button>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="frow">
+    <span><span class="tbd">【署名待确认】</span></span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <a class="btn" href="#wechat">加我微信</a>
+</div>
+
+<div class="toast" id="toast">已复制</div>
+
+<script>
+  (function(){
+    /* 底部浮条：滑过首屏后出现 */
+    var bar = document.getElementById('bar');
+    var hero = document.querySelector('.hero');
+    if(bar && hero && ('IntersectionObserver' in window)){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ bar.classList.toggle('on', !e.isIntersecting); });
+      }, {threshold: 0.15}).observe(hero);
+    }
+
+    /* 复制微信号 */
+    var btn = document.getElementById('copy');
+    var toast = document.getElementById('toast');
+    var wxid = 'li18689683';
+    var t;
+    function tip(msg){
+      if(!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('on');
+      clearTimeout(t);
+      t = setTimeout(function(){ toast.classList.remove('on'); }, 1600);
+    }
+    if(btn){
+      btn.addEventListener('click', function(){
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(wxid).then(function(){ tip('已复制'); },
+            function(){ tip('长按上面的号复制'); });
+        }else{
+          var ta = document.createElement('textarea');
+          ta.value = wxid; ta.style.position='fixed'; ta.style.opacity='0';
+          document.body.appendChild(ta); ta.select();
+          try{ document.execCommand('copy'); tip('已复制'); }
+          catch(e){ tip('长按上面的号复制'); }
+          document.body.removeChild(ta);
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>
